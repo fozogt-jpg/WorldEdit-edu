@@ -60,6 +60,16 @@ events.onPlayerMessage(function (message, sender, receiver, messageType) {
         }
     }
 })
+player.onChat("\\\\destroy", function (MODWEcmddestroy_arg1) {
+    for (let index = 0; index < MODWEcmddestroy_arg1; index++) {
+        player.execute(
+        "summon tnt ~ ~ ~"
+        )
+        player.execute(
+        "event entity @e[type=tnt] minecraft:spawn_vanguard"
+        )
+    }
+})
 player.onChat("\\\\wand", function () {
     mobs.give(
     mobs.target(NEAREST_PLAYER),
